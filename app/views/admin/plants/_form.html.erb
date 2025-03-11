@@ -1,0 +1,33 @@
+<%= form_with model: plant, local: true, url: (plant.persisted? ? admin_plant_path(plant) : admin_plants_path), method: (plant.persisted? ? :patch : :post) do |f| %>
+  <% if plant.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% plant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :name, "Nom de la plante", class: "form-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :price, "Prix (€)", class: "form-label" %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :description, "Description", class: "form-label" %>
+    <%= f.text_area :description, rows: 4, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :stock, "Stock (unités)", class: "form-label" %>
+    <%= f.number_field :stock, class: "form-control" %>
+  </div>
+
+  <%= f.submit (plant.persisted? ? "Mettre à jour" : "Créer"), class: "btn btn-primary" %>
+<% end %>

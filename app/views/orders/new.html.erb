@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">Valider ma commande</h1>
+
+<% if @cart_items.any? %>
+  <table class="table shadow">
+    <thead class="table-dark">
+      <tr>
+        <th>Plante</th>
+        <th>Quantité</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% total = 0 %>
+      <% @cart_items.each do |item| %>
+        <tr>
+          <td><%= item.plant.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.plant.price * item.quantity %> €</td>
+        </tr>
+        <% total += item.plant.price * item.quantity %>
+      <% end %>
+    </tbody>
+  </table>
+  <p class="text-end fw-bold">Total : <%= total %> €</p>
+  <%= button_to "Confirmer la commande", orders_path, method: :post, class: "btn btn-success w-100" %>
+<% else %>
+  <p class="alert alert-info">Votre panier est vide.</p>
+<% end %>

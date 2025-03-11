@@ -1,0 +1,7 @@
+<h1>Mon Profil</h1>
+<p><strong>Email :</strong> <%= @user.email %></p>
+<% if @user.name.present? %>
+  <p><strong>Nom :</strong> <%= @user.name %></p>
+<% end %>
+
+<%= link_to "Modifier mon profil", edit_user_path(@user), class: "btn btn-primary" %>

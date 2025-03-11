@@ -1,0 +1,7 @@
+<tr>
+  <td><%= item.plant.name %></td>
+  <td><%= item.quantity %></td>
+  <td>
+    <%= button_to "Retirer", cart_path(item), method: :delete, class: "btn btn-danger" %>
+  </td>
+</tr>

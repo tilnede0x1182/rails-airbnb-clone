@@ -1,0 +1,16 @@
+<h1 class="text-center mb-4">📜 Mes Commandes</h1>
+
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <div class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Commande n°<%= order.id %></h5>
+        <p><strong>Total :</strong> <%= order.total_price %> €</p>
+        <p><strong>Statut :</strong> <%= order.status %></p>
+        <p class="text-muted"><small>Passée le <%= order.created_at.strftime("%d/%m/%Y %H:%M") %></small></p>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p class="alert alert-info">Aucune commande pour le moment.</p>
+<% end %>

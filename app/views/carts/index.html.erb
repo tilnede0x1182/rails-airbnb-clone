@@ -1,0 +1,29 @@
+<h1 class="text-center mb-4">🛒 Mon Panier</h1>
+
+<% if @cart_items.any? %>
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Plante</th>
+        <th>Quantité</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cart_items.each do |item| %>
+        <tr>
+          <td><%= item.plant.name %></td>
+          <td><%= item.quantity %></td>
+          <td>
+            <%= button_to "Retirer", cart_path(item),
+                          method: :delete,
+                          class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Passer la commande", new_order_path, class: "btn btn-primary" %>
+<% else %>
+  <p class="alert alert-info">Votre panier est vide.</p>
+<% end %>

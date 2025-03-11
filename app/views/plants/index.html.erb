@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">🌿 Liste des Plantes</h1>
+
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "➕ Nouvelle Plante", new_admin_plant_path, class: "btn btn-info mb-3" %>
+<% end %>
+
+<div class="row">
+  <% @plants.each do |plant| %>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to plant.name, plant_path(plant), class: "text-decoration-none text-dark" %>
+          </h5>
+          <p class="card-text">
+            <strong>Prix :</strong> <%= plant.price %> €<br>
+            <strong>Stock :</strong> <%= plant.stock %> unités
+          </p>
+          <% if user_signed_in? %>
+            <%= button_to "Ajouter au panier", carts_path(plant_id: plant.id), method: :post, class: "btn btn-success w-100" %>
+          <% else %>
+            <p class="text-muted mt-2">Connectez-vous pour acheter</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

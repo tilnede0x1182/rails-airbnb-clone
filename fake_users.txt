@@ -1,0 +1,27 @@
+📜 Liste des utilisateurs générés :
+
+🔹 **Admins** 🔹
+  • admin1@example.com | password
+  • admin2@example.com | password
+  • admin3@example.com | password
+
+🔸 **Utilisateurs normaux** 🔸
+  • elroy@dietrich-schulist.example | password
+  • sharri@aufderhar.test | password
+  • louis.oconnell@white.test | password
+  • paula@mosciski.test | password
+  • johnie@sporer-klein.example | password
+  • bennett.pouros@quitzon-leannon.example | password
+  • kallie@swift.test | password
+  • gale@heidenreich-mayer.test | password
+  • keiko_dicki@balistreri-farrell.example | password
+  • dee@gorczany.test | password
+  • winston@bartell-kozey.example | password
+  • sharyl@kshlerin-hills.example | password
+  • martin.white@ernser-durgan.example | password
+  • floy@lehner.example | password
+  • norberto.leuschke@hauck-corkery.example | password
+  • gaynell_klein@heaney.test | password
+  • season@watsica.example | password
+  • evan_brekke@sanford.test | password
+  • stefan@dicki-gislason.example | password
