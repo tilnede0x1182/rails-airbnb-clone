@@ -36,7 +36,7 @@ module Admin
     def destroy
       @plant = Plant.find(params[:id])
       @plant.destroy
-      redirect_to admin_plants_path, notice: "Plante supprimée."
+      redirect_to admin_plants_path, notice: "Plante supprimée avec succès."
     end
 
     private

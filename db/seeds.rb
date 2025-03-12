@@ -31,7 +31,8 @@ puts "👤 Création de 3 administrateurs..."
     email: "admin#{i+1}@example.com",
     password: "password",
     password_confirmation: "password",
-    admin: true
+    admin: true,
+    name: Faker::Name.name
   )
   admins << user
 end
