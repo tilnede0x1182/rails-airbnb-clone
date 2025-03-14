@@ -32,7 +32,10 @@
             </li>
           <% end %>
           <li class="nav-item">
-            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "nav-link" %>
+						<%= button_to "Déconnexion", destroy_user_session_path,
+						method: :delete,
+						data: { turbo: false },
+						class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
