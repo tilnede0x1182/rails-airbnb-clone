@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root "plants#index"
 
-  # Authentification avec Devise (si utilisé)
-  devise_for :users
+  # Authentification avec Devise
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+
+  # Gestion utilisateur (profil personnel)
+  resources :users, only: [:show, :edit, :update]
 
   # Gestion des plantes (publique)
   resources :plants, only: [:index, :show]
@@ -12,9 +15,6 @@ Rails.application.routes.draw do
 
   # Gestion des commandes
   resources :orders, only: [:index, :new, :create]
-
-  # Gestion utilisateur (profil personnel)
-  resources :users, only: [:show, :edit, :update]
 
   # Administration
   namespace :admin do
