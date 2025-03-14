@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    # Bloque l'accès si l'ID ne correspond pas à l'utilisateur actuel
-    redirect_to root_path, alert: "Accès interdit." unless @user == current_user
+    # # Bloque l'accès si l'ID ne correspond pas à l'utilisateur actuel
+    # redirect_to root_path, alert: "Accès interdit." unless @user == current_user
   end
 
   def edit
@@ -21,8 +21,8 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find_by(id: params[:id])
-    redirect_to root_path
+    @user = User.find(params[:id])
+    redirect_to root_path, alert: "Accès interdit." unless @user == current_user
   end
 
   def user_params
